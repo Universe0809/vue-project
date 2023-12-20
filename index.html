@@ -2,11 +2,25 @@
 <html>
   <head>
     <title>VueJS</title>
+    <link rel="stylesheet" type="text/css" href="./main.css" />
   </head>
   <body>
-    <div id="app">
-      <p>Hey</p>
+    <div id="app" v-cloak>
+      <p>{{fullName()}}</p>
+      <p>{{age}}</p>
+      <a v-bind:href="url" target="_blank">Google</a>
+      <hr />
+      <label>Bg Color</label>
+      <input type="checkbox" v-model="purple" />
+      {{purple}}
+      <label>First Name</label>
+      <input type="text" v-model="firstName" />
+
+      <label>Last Name</label>
+      <input type="text" v-model="lastName" />
+      <div class="circle" :class="circle_classes"></div>
     </div>
+    <button type="button" v-on:click="age++">Inc</button>
   </body>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="./app.js"></script>
